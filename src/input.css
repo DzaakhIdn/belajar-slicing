@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@layer components {
+  .card {
+    @apply flex justify-center items-center flex-col gap-2 rounded shadow-sm border p-5;
+  }
+  .card-layanan {
+    @apply mt-5 flex justify-center items-center flex-col gap-4 py-6 px-5 shadow-md rounded-sm;
+  }
+  .title {
+    @apply font-Poppins font-bold text-xl text-slate-700 text-center md:text-2xl;
+  }
+  .sub-title {
+    @apply font-Poppins font-medium text-xs text-slate-900 mb-5 md:text-sm;
+  }
+}

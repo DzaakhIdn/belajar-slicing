@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Insania Sinergia</title>
+    <link rel="stylesheet" href="src/output.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="w-full bg-white fixed z-40">
+      <div class="mx-auto flex justify-between px-4 md:p-3">
+        <div class="logo h-10 my-auto">
+          <img
+            src="img/WhatsApp_Image_2023-06-09_at_07.18 1.png"
+            alt="logog"
+            class="w-full h-full object-contain"
+          />
+        </div>
+        <button
+          class="toggle h-16 w-6 items-center flex cursor-pointer md:hidden"
+          onclick="openNavbar()"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+            class="h-6 w-6 fill-[#018491]"
+          >
+            <path
+              d="M224,128a8,8,0,0,1-8,8H40a8,8,0,0,1,0-16H216A8,8,0,0,1,224,128ZM40,72H216a8,8,0,0,0,0-16H40a8,8,0,0,0,0,16ZM216,184H40a8,8,0,0,0,0,16H216a8,8,0,0,0,0-16Z"
+            ></path>
+          </svg>
+        </button>
+        <ul
+          class="hidden md:flex font-Poppins text-center gap-3 items-center justify-between mx-auto text-sm"
+        >
+          <li><a class="text-sm text-[#018491]" href="index.html">Home</a></li>
+          <li>
+            <a class="text-sm text-[#018491]" href="about-us.html">About Us</a>
+          </li>
+          <li>
+            <a class="text-sm text-[#018491]" href="partners.html">Partner</a>
+          </li>
+          <li>
+            <a class="text-sm text-[#018491]" href="services.html">Service</a>
+          </li>
+          <li>
+            <a class="text-sm text-[#018491]" href="gallery.html">Gallery</a>
+          </li>
+          <li><a class="text-sm text-[#018491]" href="">Info</a></li>
+          <li>
+            <a class="text-sm text-[#018491]" href="careers.html">Carrer</a>
+          </li>
+          <li><a class="text-sm text-[#018491]" href="">Contact</a></li>
+        </ul>
+        <button
+          onclick="toggleLogin('open')"
+          href="#"
+          class="button bg-[#018491] text-center px-4 py-3 font-Poppins text-white rounded-lg text-sm hover:bg-[#22656b] hidden md:flex"
+        >
+          Daftar/Masuk
+        </button>
+      </div>
+    </nav>
+
+    <section
+      class="login w-full h-screen bg-black fixed z-[90] bg-opacity-0 transition-all duration-200 ease-in-out top-0 font-Poppins p-10 -translate-y-full"
+    >
+      <div
+        class="container w-full h-full bg-slate-50 rounded-md grid items-center p-3 gap-4 md:grid-cols-2 md:max-w-[820px] mx-auto md:p-7 relative"
+      >
+        <svg
+          onclick="toggleLogin('close')"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 256 256"
+          class="fill-slate-900 absolute w-8 h-8 right-4 top-4 cursor-pointer"
+        >
+          <path
+            d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+          ></path>
+        </svg>
+        <div
+          class="image w-full h-full justify-start items-center hidden md:flex"
+        >
+          <img src="img/sign-in.png" alt="" />
+        </div>
+        <div class="container-form flex items-center relative md:p-10">
+          <div
+            class="register flex flex-col justify-center gap-2 absolute translate-x-full transition-all duration-200 opacity-0"
+          >
+            <div class="register-title">
+              <h1 class="title uppercase">New Account</h1>
+              <p class="font-light text-slate-900 text-sm">
+                Hi, Ayo bergabung bersama kami menjadi mitra Insania Sinergia
+              </p>
+            </div>
+            <form action="#">
+              <label
+                for="nama"
+                class="block text-sm font-medium leading-6 text-gray-900"
+                >Nama</label
+              >
+              <input
+                id="nama"
+                type="text"
+                class="block w-full rounded-full border-0 py-2.5 px-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-xs sm:leading-6"
+              />
+              <label
+                for="email"
+                class="block text-sm font-medium leading-6 text-gray-900"
+                >Alamat Email</label
+              >
+              <input
+                id="email"
+                type="text"
+                class="block w-full rounded-full border-0 py-2.5 px-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-xs sm:leading-6"
+              />
+              <label
+                for="password"
+                class="block text-sm font-medium leading-6 text-gray-900"
+                >Password</label
+              >
+              <input
+                id="password"
+                type="password"
+                class="block w-full rounded-full border-0 py-2.5 px-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-xs sm:leading-6"
+              />
+              <label
+                for="conf-password"
+                class="block text-sm font-medium leading-6 text-gray-900"
+                >Konfirmasi Password</label
+              >
+              <input
+                id="conf-password"
+                type="password"
+                class="block w-full rounded-full border-0 py-2.5 px-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-xs sm:leading-6"
+              />
+              <div class="button-container mt-10 grid">
+                <button
+                  class="w-full h-full bg-[#018491BF] py-2.5 text-sm text-white rounded-full hover:bg-white hover:text-[#018491BF] hover:border hover:border-[#018491BF] transition-all duration-150"
+                >
+                  Buat Akun
+                </button>
+                <div class="mt-4"></div>
+                <button
+                  class="w-full h-full bg-slate-300 py-2.5 text-sm text-slate-500 rounded-full flex justify-center items-center gap-2 hover:bg-slate-400"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="20"
+                    height="20"
+                    viewBox="0 0 48 48"
+                  >
+                    <path
+                      fill="#FFC107"
+                      d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"
+                    ></path>
+                    <path
+                      fill="#FF3D00"
+                      d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"
+                    ></path>
+                    <path
+                      fill="#4CAF50"
+                      d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"
+                    ></path>
+                    <path
+                      fill="#1976D2"
+                      d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
+                    ></path>
+                  </svg>
+                  Sign In With Google
+                </button>
+                <p class="have text-slate-700 text-xs">
+                  Sudah punya akun?
+                  <span
+                    onclick="toggleRegister('close')"
+                    class="cursor-pointer text-[#1976D2]"
+                    >login</span
+                  >
+                </p>
+              </div>
+            </form>
+          </div>
+          <div class="sign-in transition-all duration-200 md:w-full">
+            <h1 class="font-semibold text-xl text-slate-700 text-center">
+              sign In
+            </h1>
+            <form action="#" class="mt-10 w-full">
+              <label
+                for="email"
+                class="block text-sm font-medium leading-6 text-gray-900"
+                >Email Address</label
+              >
+              <div class="mt-1"></div>
+              <input
+                id="email"
+                type="text"
+                class="block w-full rounded-full border-0 py-2.5 px-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-xs sm:leading-6"
+              />
+              <div class="mt-3"></div>
+              <label
+                for="Password"
+                class="block text-sm font-medium leading-6 text-gray-900"
+                >Password</label
+              >
+              <div class="mt-1"></div>
+              <input
+                id="Password"
+                type="password"
+                class="block w-full rounded-full border-0 py-2.5 px-2.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 text-xs sm:leading-6"
+              />
+            </form>
+            <a href="#" class="text-slate-400 text-xs text-right"
+              >lupa password</a
+            >
+            <div class="button-container mt-10 grid gap-4">
+              <button
+                class="w-full h-full bg-[#018491BF] py-2.5 text-sm text-white rounded-full hover:bg-white hover:text-[#018491BF] hover:border hover:border-[#018491BF] transition-all duration-150"
+              >
+                Sign In
+              </button>
+              <button
+                onclick="toggleRegister('open')"
+                class="w-full h-full bg-slate-300 py-2.5 text-sm text-slate-500 rounded-full hover:bg-slate-400"
+              >
+                Create New Account
+              </button>
+              <button
+                class="w-full h-full bg-slate-300 py-2.5 text-sm text-slate-500 rounded-full flex justify-center items-center gap-2 hover:bg-slate-400"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  x="0px"
+                  y="0px"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 48 48"
+                >
+                  <path
+                    fill="#FFC107"
+                    d="M43.611,20.083H42V20H24v8h11.303c-1.649,4.657-6.08,8-11.303,8c-6.627,0-12-5.373-12-12c0-6.627,5.373-12,12-12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C12.955,4,4,12.955,4,24c0,11.045,8.955,20,20,20c11.045,0,20-8.955,20-20C44,22.659,43.862,21.35,43.611,20.083z"
+                  ></path>
+                  <path
+                    fill="#FF3D00"
+                    d="M6.306,14.691l6.571,4.819C14.655,15.108,18.961,12,24,12c3.059,0,5.842,1.154,7.961,3.039l5.657-5.657C34.046,6.053,29.268,4,24,4C16.318,4,9.656,8.337,6.306,14.691z"
+                  ></path>
+                  <path
+                    fill="#4CAF50"
+                    d="M24,44c5.166,0,9.86-1.977,13.409-5.192l-6.19-5.238C29.211,35.091,26.715,36,24,36c-5.202,0-9.619-3.317-11.283-7.946l-6.522,5.025C9.505,39.556,16.227,44,24,44z"
+                  ></path>
+                  <path
+                    fill="#1976D2"
+                    d="M43.611,20.083H42V20H24v8h11.303c-0.792,2.237-2.231,4.166-4.087,5.571c0.001-0.001,0.002-0.001,0.003-0.002l6.19,5.238C36.971,39.205,44,34,44,24C44,22.659,43.862,21.35,43.611,20.083z"
+                  ></path>
+                </svg>
+                Sign In With Google
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <aside
+      class="w-full h-screen bg-white bg-opacity-50 fixed z-50 md:hidden transition-all duration-200 ease-in-out translate-x-full top-0"
+    >
+      <div
+        class="content h-full backdrop-blur flex items-center justify-center"
+      >
+        <button class="absolute z-[99] top-4 right-4" onclick="closeNavbar()">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 256 256"
+            class="h-9 w-9 fill-[#018491]"
+          >
+            <path
+              d="M205.66,194.34a8,8,0,0,1-11.32,11.32L128,139.31,61.66,205.66a8,8,0,0,1-11.32-11.32L116.69,128,50.34,61.66A8,8,0,0,1,61.66,50.34L128,116.69l66.34-66.35a8,8,0,0,1,11.32,11.32L139.31,128Z"
+            ></path>
+          </svg>
+        </button>
+        <ul class="font-Poppins flex flex-col text-center gap-2">
+          <li><a class="text-sm text-[#018491]" href="index.html">Home</a></li>
+          <li>
+            <a class="text-sm text-[#018491]" href="about-us.html">About Us</a>
+          </li>
+          <li>
+            <a class="text-sm text-[#018491]" href="partners.html">Partner</a>
+          </li>
+          <li>
+            <a class="text-sm text-[#018491]" href="services.html">Service</a>
+          </li>
+          <li>
+            <a class="text-sm text-[#018491]" href="gallery.html">Gallery</a>
+          </li>
+          <li><a class="text-sm text-[#018491]" href="">Info</a></li>
+          <li>
+            <a class="text-sm text-[#018491]" href="careers.html">Carrer</a>
+          </li>
+          <li><a class="text-sm text-[#018491]" href="">Contact</a></li>
+          <li
+            onclick="toggleLogin('open')"
+            class="bg-[#018491] text-center px-4 py-3 font-Poppins text-white rounded-lg text-sm hover:bg-[#22656b] mt-10"
+          >
+            Daftar/Masuk
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- Careers Sect -->
+    <section
+      class="h-full w-full bg-[#65BABF1A] py-20 font-Poppins p-7 md:pt-40 md:px-10"
+    >
+      <div
+        class="content-container bg-slate-50 rounded-lg flex flex-col gap-5 overflow-hidden md:flex-row"
+      >
+        <img src="img/career-img.jpg" alt="" class="md:w-4/5" />
+        <div
+          class="text px-4 pb-20 md:flex md:flex-col md:justify-center md:items-center"
+        >
+          <h1 class="title text-left mb-2 md:self-start">
+            Busra Efek Indonesia
+          </h1>
+          <p class="text-sm text-slate-900">
+            Bursa efek adalah sebuah pasar yang berhubungan dengan pembelian dan
+            penjualan efek perusahaan yang sudah terdaftar di bursa itu. Bursa
+            efek tersebut, bersama-sama dengan pasar uang merupakan sumber utama
+            permodalan eksternal bagi perusahaan dan pemerintah.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Sect -->
+    <footer
+      class="footer py-4 md:pt-6 md:pb-20 w-full h-full bg-[#02546480] font-Poppins"
+    >
+      <div class="container md:flex md:gap-10 md:justify-between">
+        <div class="bungkus">
+          <img
+            src="img/WhatsApp_Image_2023-06-09_at_07.18 1.png"
+            alt=""
+            class="w-32 md:w-52"
+          />
+          <div class="info flex gap-3 px-4 mt-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 256 256"
+              class="fill-slate-50 w-5 h-5 md:w-4 md:h-4"
+            >
+              <path
+                d="M240,208H224V136l2.34,2.34A8,8,0,0,0,237.66,127L139.31,28.68a16,16,0,0,0-22.62,0L18.34,127a8,8,0,0,0,11.32,11.31L32,136v72H16a8,8,0,0,0,0,16H240a8,8,0,0,0,0-16ZM48,120l80-80,80,80v88H160V152a8,8,0,0,0-8-8H104a8,8,0,0,0-8,8v56H48Zm96,88H112V160h32Z"
+              ></path>
+            </svg>
+            <p class="text-xs w-52 text-white md:text-sm">
+              Jl. Perintis Kemerdekaan No.59, Kota Makassar
+            </p>
+          </div>
+          <div class="info flex gap-3 px-4 mt-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 256 256"
+              class="fill-slate-50 w-5 h-5 md:w-4 md:h-4"
+            >
+              <path
+                d="M144.27,45.93a8,8,0,0,1,9.8-5.66,86.22,86.22,0,0,1,61.66,61.66,8,8,0,0,1-5.66,9.8A8.23,8.23,0,0,1,208,112a8,8,0,0,1-7.73-5.94,70.35,70.35,0,0,0-50.33-50.33A8,8,0,0,1,144.27,45.93Zm-2.33,41.8c13.79,3.68,22.65,12.54,26.33,26.33A8,8,0,0,0,176,120a8.23,8.23,0,0,0,2.07-.27,8,8,0,0,0,5.66-9.8c-5.12-19.16-18.5-32.54-37.66-37.66a8,8,0,1,0-4.13,15.46Zm81.94,95.35A56.26,56.26,0,0,1,168,232C88.6,232,24,167.4,24,88A56.26,56.26,0,0,1,72.92,32.12a16,16,0,0,1,16.62,9.52l21.12,47.15,0,.12A16,16,0,0,1,109.39,104c-.18.27-.37.52-.57.77L88,129.45c7.49,15.22,23.41,31,38.83,38.51l24.34-20.71a8.12,8.12,0,0,1,.75-.56,16,16,0,0,1,15.17-1.4l.13.06,47.11,21.11A16,16,0,0,1,223.88,183.08Zm-15.88-2s-.07,0-.11,0h0l-47-21.05-24.35,20.71a8.44,8.44,0,0,1-.74.56,16,16,0,0,1-15.75,1.14c-18.73-9.05-37.4-27.58-46.46-46.11a16,16,0,0,1,1-15.7,6.13,6.13,0,0,1,.57-.77L96,95.15l-21-47a.61.61,0,0,1,0-.12A40.2,40.2,0,0,0,40,88,128.14,128.14,0,0,0,168,216,40.21,40.21,0,0,0,208,181.07Z"
+              ></path>
+            </svg>
+            <p class="text-xs w-52 text-white md:text-sm">
+              +6281-2345-6782 insaniasinergia@gmail.com
+            </p>
+          </div>
+        </div>
+        <div
+          class="container px-4 flex flex-col justify-evenly gap-3 md:flex-row"
+        >
+          <div class="service mt-4">
+            <h1 class="text-white text-sm font-bold mb-2 md:text-base">
+              Layanan Insania Sinergia
+            </h1>
+            <ul class="text-xs text-white flex flex-col gap-2 md:text-sm">
+              <li><a href="#">Jasa Pembukuan</a></li>
+              <li><a href="#">Jasa Pendampingan</a></li>
+              <li><a href="#">Konsultasi Pajak</a></li>
+              <li><a href="#">Pembuatan dan Perubahan Akta</a></li>
+              <li><a href="#">Kuasa hukum pengadilan pajak</a></li>
+            </ul>
+          </div>
+          <div class="service mt-4">
+            <h1 class="text-white text-sm font-bold mb-2 md:text-base">
+              Sumber Data
+            </h1>
+            <ul class="text-xs text-white flex flex-col gap-2 md:text-sm">
+              <li><a href="#">FAQ</a></li>
+              <li><a href="#">Studi Kasus</a></li>
+            </ul>
+          </div>
+          <div class="service mt-4">
+            <h1 class="text-white text-sm font-bold mb-2 md:text-base">
+              Company
+            </h1>
+            <ul class="text-xs text-white flex flex-col gap-2 md:text-sm">
+              <li><a href="#">About</a></li>
+              <li><a href="#">Contact</a></li>
+              <li><a href="#">Career</a></li>
+              <li><a href="#">YouTube</a></li>
+              <li><a href="#">Instagram</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <script src="script.js"></script>
+  </body>
+</html>
